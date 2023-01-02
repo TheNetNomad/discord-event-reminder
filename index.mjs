@@ -10,10 +10,12 @@ const PARTY_PING_ID = process.env.PARTY_PING_ID;
 client.once('ready', c => {
 	console.log(`Ready! Logged in as ${c.user.tag}`);
 	client.channels.cache.forEach(channel => {
-		if (channel.permissionsFor(client.user).has(PermissionsBitField.Flags.ViewChannel) & (channel.id == ANNOUNCEMENTS_ID)) {
+		if(channel.permissionsFor(client.user) == null){
+		
+		}
+		else if (channel.permissionsFor(client.user).has(PermissionsBitField.Flags.ViewChannel) & (channel.id == ANNOUNCEMENTS_ID)) {
 			let eventCache = channel.guild.scheduledEvents.cache;
 
-			let nextHour = new Set();
 			eventCache.forEach(event => {
 				if (event.scheduledStartAt < new Date(Date.now() + 61 * 60 * 1000) && event.scheduledStartAt > Date.now()) {
 					console.log(event);
