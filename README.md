@@ -4,7 +4,7 @@ There are a million discord event scheduling bots. Many of them use their own ca
 ## Developement Status
 This was spun out of a larger swiss-army-knife bot I'm building for my server, so this hasn't been tested on it's own and may have issues that came from the gutting. Let me know if you encounter any and I will fix them at earliest convienence. That said, don't expect this bot to get any more sophisticated or for me to eventually host a public instance. 
 
-## Prereqs
+## Usage
 Before running, you'll need to install the discord.js library with 
 
 `npm install discord.js`
